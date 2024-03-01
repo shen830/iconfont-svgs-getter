@@ -1,15 +1,15 @@
 {
-  "name": "@njshaoshao/iconfont-svgs-getter",
-  "version": "1.0.1",
+  "name": "@xiameiting/iconfont-svgs-getter",
+  "version": "1.0.4",
   "description": "A cli tool to get iconfont svg files from `iconfont.js`",
   "repository": {
     "type": "git",
-    "url": "https://github.com/lesonky/iconfont-svgs-getter"
+    "url": "git+https://github.com/shen830/iconfont-svgs-getter.git"
   },
   "bin": {
-    "iconfont-getter": "src/index.js"
+    "icon": "src/index.js"
   },
-  "author": "lesonky",
+  "author": "lesonky+xiameiting",
   "license": "MIT",
   "private": false,
   "dependencies": {
@@ -19,5 +19,14 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "bugs": {
+    "url": "https://github.com/shen830/iconfont-svgs-getter/issues"
+  },
+  "homepage": "https://github.com/shen830/iconfont-svgs-getter#readme",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
   }
 }
