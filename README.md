@@ -6,13 +6,16 @@ npm install @njshaoshao/iconfont-svgs-getter -g
 
 # 使用
 iconfont-getter -u http://at.alicdn.com/t/font_1166492_9wf3vffws5h.js -o ~/test
+
+# 本地使用
+node src/index.js -u http://at.alicdn.com/t/c/font_1166492_9wf3vffws5h.js -o "D:\SVG"
 ```
 
 参数介绍
 
 |短参数|长参数|介绍|
 |:--|:--|:--:|
-|-u|--url|项目的在线js地址|
+|-u|--url|项目的Symbol在线js地址|
 |-o|--output|svg文件存储路径|
 
 功能实现
