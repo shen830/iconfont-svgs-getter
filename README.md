@@ -5,7 +5,7 @@
 npm install @njshaoshao/iconfont-svgs-getter -g
 
 # 使用
-iconfont-getter -u http://at.alicdn.com/t/font_1166492_9wf3vffws5h.js -o ~/test
+icon -u http://at.alicdn.com/t/font_1166492_9wf3vffws5h.js -o ~/test
 
 # 本地使用
 node src/index.js -u http://at.alicdn.com/t/c/font_1166492_9wf3vffws5h.js -o "D:\SVG"
