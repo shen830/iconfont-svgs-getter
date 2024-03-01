@@ -12,9 +12,9 @@ const { version = '1.0.0' } = require('../package.json');
 async function main({ url = '', output = 'svg' }) {
   try {
     // 获取 url 内容
-    console.log('Fetching iconfont.js');
+    console.log('开始处理 iconfont.js');
     const content = await getUrlContent(url);
-    console.log('Fetching iconfont.js finished');
+    console.log('处理 iconfont.js 完成');
     // 获取 内容中 symbol 部分
     const symbols = content.match(/(?<=\<svg\>)(.*?)(?=\<\/svg\>)/) || [];
     if (!symbols[0]) {
@@ -33,8 +33,8 @@ async function main({ url = '', output = 'svg' }) {
 
     symbolsList.forEach((symbol) => {
       // 获取名称
-      let symbolName = kebabCase(/(?<=id="icon).*?(?=")/.exec(symbol));
-
+      let symbolAllName = kebabCase(/(?<=id=").*?(?=")/.exec(symbol));
+      let symbolName = symbolAllName.split('-').slice(1).join('-');
       // 处理主题
       let folderName;
       if (/filled$/i.test(symbolName)) {
@@ -63,7 +63,7 @@ async function main({ url = '', output = 'svg' }) {
     </svg>`
       );
       // 写入文件
-      console.log(`Writing file ${symbolName}.svg`);
+      console.log(`写入文件 ${symbolName}.svg`);
       fs.writeFileSync(path.resolve(__dirname, `${output}/${folderName}`, `${symbolName}.svg`), symbol, (err) => {
         if (err) {
           console.error(err);
@@ -71,7 +71,7 @@ async function main({ url = '', output = 'svg' }) {
         }
       });
     });
-    console.log(`All files write finished, you can find them at ${path.resolve(__dirname, output)}`);
+    console.log(`一共${symbolsList.length}个文件已写入完成，您可以在这里看到 ${path.resolve(__dirname, output)}`);
   } catch (e) {
     console.error(e);
     throw e;
