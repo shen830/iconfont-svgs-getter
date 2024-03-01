@@ -86,7 +86,7 @@ program
 program.on('--help', function () {
   console.log('');
   console.log('Example:');
-  console.log('  $ iconfont-getter -u http://your-project-url -o svg');
+  console.log('  $ icon -u http://your-project-url -o svg');
 });
 
 program.parse(process.argv);
